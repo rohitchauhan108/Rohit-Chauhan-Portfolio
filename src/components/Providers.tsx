@@ -14,9 +14,9 @@ const ThemeContext = createContext<{
 export const useTheme = () => useContext(ThemeContext);
 
 export function Providers({ children }: { children: React.ReactNode }) {
-  // Start with the server value (dark) so SSR and first client render match,
+  // Start with the server value (light) so SSR and first client render match,
   // then read the saved preference after mount (fixes the hydration warning).
-  const [isDark, setIsDark] = useState(true);
+  const [isDark, setIsDark] = useState(false);
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
